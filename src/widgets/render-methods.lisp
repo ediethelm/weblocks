@@ -8,6 +8,7 @@
   (:import-from #:weblocks/widgets/base
                 #:get-css-classes-as-string
                 #:get-html-tag
+		#:get-inline-style
                 #:render)
   (:import-from #:weblocks/request
                 #:ajax-request-p)
@@ -51,6 +52,7 @@
      :name (get-html-tag widget)
      :class (get-css-classes-as-string widget)
      :id (dom-id widget)
+     :style (get-inline-style widget)
      (call-next-method))))
 
 
