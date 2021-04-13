@@ -26,6 +26,7 @@
            #:render
            #:get-css-classes
            #:get-html-tag
+	   #:get-inline-style
            #:mark-dirty
            #:update
            #:widget
@@ -70,6 +71,13 @@ inherits from 'widget' if no direct superclasses are provided."
   (:documentation "Define this method to render widget's content."))
 
 
+(defgeneric get-inline-style (widget)
+  (:documentation "This method should return a string containing inline style.
+                   By default it returns an empty string."))
+
+(defmethod get-inline-style ((widget t))
+  "")
+  
 (defgeneric get-html-tag (widget)
   (:documentation "This method should return a keyword, like :div or :article.
                    By default, it returns :div.
